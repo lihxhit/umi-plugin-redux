@@ -47,16 +47,16 @@ export default (api: IApi) => {
         base: srcModelsPath,
         ...baseOpts,
       }),
-      ...getModels({
-        base: api.paths.absPagesPath!,
-        pattern: `**/${getModelDir()}/**/*.{ts,tsx,js,jsx}`,
-        ...baseOpts,
-      }),
-      ...getModels({
-        base: api.paths.absPagesPath!,
-        pattern: `**/model.{ts,tsx,js,jsx}`,
-        ...baseOpts,
-      }),
+      // ...getModels({
+      //   base: api.paths.absPagesPath!,
+      //   pattern: `**/${getModelDir()}/**/*.{ts,tsx,js,jsx}`,
+      //   ...baseOpts,
+      // }),
+      // ...getModels({
+      //   base: api.paths.absPagesPath!,
+      //   pattern: `**/model.{ts,tsx,js,jsx}`,
+      //   ...baseOpts,
+      // }),
     ]);
   }
 
@@ -200,7 +200,7 @@ export default (api: IApi) => {
   );
 
   api.registerCommand({
-    name: 'dva',
+    name: 'redux',
     fn({ args }) {
       if (args._[0] === 'list' && args._[1] === 'model') {
         const models = getAllModels();
